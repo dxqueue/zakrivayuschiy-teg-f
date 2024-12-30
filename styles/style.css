@@ -21,7 +21,7 @@
   min-block-size: 100dvb;
 }
 
-.header{
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,6 @@
 
 .header__paragraph {
   margin-block-end: clamp(7.5rem, 6.9231rem + 2.4615vw, 8rem);
-  font-weight: 400;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   line-height: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
   text-transform: uppercase;
@@ -61,6 +60,10 @@
   list-style: none;
 }
 
+.card-list-item:last-child {
+  margin-block-end: 50px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -70,15 +73,9 @@
 
 .card__title {
   padding: 3px 24px 3px 10px;
-  font-weight: 700;
+  font-variation-settings: 'wght' 700;
   font-size: 18px;
   line-height: 25px;
-}
-
-.card__description {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
 }
 
 .card__image-container {
@@ -161,6 +158,12 @@
   gap: 27px;
 }
 
+.card__description {
+  font-variation-settings: 'wght' 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
 .card__button-container {
   display: flex;
   justify-content: end;
@@ -191,6 +194,10 @@
 .main-body {
   fill: transparent;
   transition: fill 0.3s;
+}
+
+.sparks {
+  fill: none;
 }
 
 .like-icon.is-liked .sparks {
@@ -244,6 +251,13 @@
   outline: 2px solid var(--border-color, #000);
 }
 
+.button {
+  position: relative;
+  border: 2px solid var(--border-color, #000);
+  background-color: var(--card-background-color, #fff);
+  cursor: pointer;
+}
+
 .card__like-button {
   padding-block-start: 5px;
   inline-size: 130px;
@@ -255,14 +269,9 @@
   z-index: 1;
   color: var(--button-text-color, #fff);
   font-family: var(--accent-font, fantasy);
-  font-weight: 400;
   font-size: 14px;
   transition: color 0.5s ease-in-out;
   mix-blend-mode: difference;
-}
-
-.card-list-item:last-child {
-  margin-block-end: 50px;
 }
 
 .memory__save-button {
@@ -273,7 +282,7 @@
   gap: 8px;
   margin-block-end: clamp(6.25rem, 6.184rem + 0.2817vw, 6.4375rem);
   padding-block: 15px;
-  inline-size: clamp(19.375rem, 18.7148rem + 2.8169vw, 21.25rem);  
+  inline-size: clamp(19.375rem, 18.7148rem + 2.8169vw, 21.25rem);
 }
 
 .save-icon {
@@ -284,13 +293,6 @@
   mix-blend-mode: difference;
   inline-size: 21px;
   block-size: 21px;
-}
-
-.button {
-  position: relative;
-  border: 2px solid var(--border-color, #000);
-  background-color: var(--card-background-color, #fff);
-  cursor: pointer;
 }
 
 .button::before {
@@ -328,11 +330,7 @@
   transition: box-shadow 0.3s ease;
 }
 
-.sparks {
-  fill: none;
-}
-
-#dialog-id[open]{
+#dialog-id[open] {
   display: grid;
   grid-template-rows: min-content min-content;
   gap: 30px;
